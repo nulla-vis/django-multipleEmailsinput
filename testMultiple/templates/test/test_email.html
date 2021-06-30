@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'multiple-email/multiple-emails.css' %}">
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="{% static 'multiple-email/multiple-emails.js' %}"></script>
+    <title>Document</title>
+</head>
+<body>
+
+        <input type="email" id="demo" name="email">
+        <form method="POST" action="{% url 'test_email' %}">
+            {% csrf_token %}
+            <input type="hidden" name="emailList" id="emailList">
+        <button type="submit" onclick="isi()">Send</button>
+        </form>
+
+    <div>
+        <p id="current_emails"></p>
+    </div>
+
+    <script src="{% static 'js/multiple.js' %}"></script>
+</body>
+</html>
