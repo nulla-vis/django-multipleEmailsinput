@@ -15,14 +15,15 @@
 		var deleteIconHTML = "";
 		if (settings.theme.toLowerCase() == "Bootstrap".toLowerCase())
 		{
-			deleteIconHTML = '<a href="#" class="multiple_emails-close" title="Remove"><span class="glyphicon glyphicon-remove"></span></a>';
+			// deleteIconHTML = '<a href="#" class="multiple_emails-close" title="Remove"><span class="glyphicon glyphicon-remove"></span></a>'; //close button use glyphon remove icon
+			deleteIconHTML = '<a href="#" class="multiple_emails-close" title="Remove"><span aria-hidden="true">&times;</span</a>'; //close button use bootstap icon
 		}
 		else if (settings.theme.toLowerCase() == "SemanticUI".toLowerCase() || settings.theme.toLowerCase() == "Semantic-UI".toLowerCase() || settings.theme.toLowerCase() == "Semantic UI".toLowerCase()) {
-			deleteIconHTML = '<a href="#" class="multiple_emails-close" title="Remove"><i class="remove icon"></i></a>';
+			deleteIconHTML = '<a href="#" class="multiple_emails-close" title="Remove"><i class="remove icon"></i>b</a>';
 		}
 		else if (settings.theme.toLowerCase() == "Basic".toLowerCase()) {
 			//Default which you should use if you don't use Bootstrap, SemanticUI, or other CSS frameworks
-			deleteIconHTML = '<a href="#" class="multiple_emails-close" title="Remove"><i class="basicdeleteicon">Remove</i></a>';
+			deleteIconHTML = '<a href="#" class="multiple_emails-close" title="Remove"><i class="basicdeleteicon">Remove</i>c</a>';
 		}
 		
 		return this.each(function() {
